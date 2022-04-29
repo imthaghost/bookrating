@@ -28,7 +28,6 @@ func CreateBookClubReview(path string) ([]*ReviewedBook, error){
 	}
 
 	// stores all books and member reviews
-	//bookRatingsMap := map[string][]*Review{}
 	reviews := make(map[string]map[string]float64)
 	var bookReview []*ReviewedBook
 

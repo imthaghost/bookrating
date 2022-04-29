@@ -6,7 +6,7 @@ import (
 	"github.com/imthaghost/bookrating/internal/notes"
 )
 
-// Service ...
+// Service represents a Notion API client
 type Service struct {
 	Client *notion.Client
 	Config config.Config
@@ -14,7 +14,7 @@ type Service struct {
 
 // Setup performs any configuration for connecting to the Notion API
 func (s *Service) Setup() {
-
+	// currently none lol
 }
 
 

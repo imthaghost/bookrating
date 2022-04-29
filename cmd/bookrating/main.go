@@ -28,13 +28,14 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// cross-check with Notion to see if a review already exists
-	pp.Println("Loading books in Notion...")
-	for _, bookReview := range reviewedBooks {
 
+	pp.Println("Loading books in Notion...")
+	// cross-check with Notion to see if a review already exists
+	for _, bookReview := range reviewedBooks {
+		// if the book already exists we don't really have to do anything
 		_, exist := notionClient.BookExists(context.Background(), bookReview.Title, databaseID)
 		if exist {
-			// update or do nothing :) technically
+			// nothing
 			} else {
 				// insert
 				var favorites float64
