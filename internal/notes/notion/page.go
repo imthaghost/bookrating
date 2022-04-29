@@ -28,7 +28,6 @@ func (s *Service) BookExists(ctx context.Context, bookTitle string, databaseID s
 	return "", false
 }
 
-
 // InsertReview will insert a review into a given Notion database
 func (s *Service) InsertReview(ctx context.Context, databaseID string, bookTitle string, rating *float64, favorites *float64) error {
 	// page properties ( book title, rating, favorites)
@@ -70,7 +69,7 @@ func (s *Service) InsertReview(ctx context.Context, databaseID string, bookTitle
 // UpdateReview ...
 func (s *Service) UpdateReview(ctx context.Context, pageID string) error {
 	// update page props
-	params := notion.UpdatePageParams {
+	params := notion.UpdatePageParams{
 		DatabasePageProperties: notion.DatabasePageProperties{
 			"Book Title": notion.DatabasePageProperty{
 				Title: []notion.RichText{
@@ -87,10 +86,9 @@ func (s *Service) UpdateReview(ctx context.Context, pageID string) error {
 
 	// update
 	_, err := s.Client.UpdatePage(ctx, pageID, params)
-	if err != nil  {
+	if err != nil {
 		return err
 	}
 
 	return nil
 }
-

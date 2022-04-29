@@ -28,8 +28,8 @@ func (n *New) Load() {
 func (n *New) Get() Config {
 
 	return Config{
-		General:  getGeneralConfig(),
-		Notion: getNotionConfig(),
+		General: getGeneralConfig(),
+		Notion:  getNotionConfig(),
 	}
 }
 
@@ -37,7 +37,7 @@ func (n *New) Get() Config {
 func getGeneralConfig() GeneralConfig {
 	// dev -- default
 	config := GeneralConfig{
-		AppEnv:        os.Getenv("APP_ENV"),
+		AppEnv: os.Getenv("APP_ENV"),
 	}
 
 	return config
@@ -47,7 +47,6 @@ func getGeneralConfig() GeneralConfig {
 func getNotionConfig() NotionConfig {
 	return NotionConfig{
 		IntegrationToken: os.Getenv("NOTION_INTEGRATION_KEY"),
-		DatabaseID: os.Getenv("NOTION_DATABASE_ID"),
+		DatabaseID:       os.Getenv("NOTION_DATABASE_ID"),
 	}
 }
-

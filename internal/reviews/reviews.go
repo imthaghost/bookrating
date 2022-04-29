@@ -13,7 +13,7 @@ import (
 // We can then parse a line and send over to a collecting goroutine over 1 channel that will fill our map. This would reduce processing time by 40%
 
 // CreateBookClubReview creates an object that contains all member reviews of a given book
-func CreateBookClubReview(path string) ([]*ReviewedBook, error){
+func CreateBookClubReview(path string) ([]*ReviewedBook, error) {
 	// open file
 	csvData, err := os.Open(path)
 	if err != nil {
@@ -42,7 +42,7 @@ func CreateBookClubReview(path string) ([]*ReviewedBook, error){
 
 		// if the book has been seen then we can just add the review into the map
 		// since the keys are unique we are always going to assign the member last review
-		if book , ok := reviews[bookTitle]; ok {
+		if book, ok := reviews[bookTitle]; ok {
 			book[memberName] = rating
 		} else {
 			reviews[bookTitle] = map[string]float64{memberName: rating}
@@ -59,22 +59,18 @@ func CreateBookClubReview(path string) ([]*ReviewedBook, error){
 				favorite += 1
 			}
 
-
 		}
 		average := sum / float64(len(reviews[bookName]))
 		averageRating := roundFloat(average, 1)
 		bookReview = append(bookReview, &ReviewedBook{
-			Title: bookName,
-			Favorites: favorite,
+			Title:         bookName,
+			Favorites:     favorite,
 			AverageRating: averageRating,
 		})
 	}
 
 	return bookReview, nil
 }
-
-
-
 
 func roundFloat(val float64, precision uint) float64 {
 	ratio := math.Pow(10, float64(precision))

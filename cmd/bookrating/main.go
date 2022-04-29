@@ -23,11 +23,10 @@ func main() {
 	notionClient := notion.New(cfg)
 
 	// create book reviews
-	reviewedBooks , err := reviews.CreateBookClubReview(csvPath)
+	reviewedBooks, err := reviews.CreateBookClubReview(csvPath)
 	if err != nil {
 		log.Fatal(err)
 	}
-
 
 	pp.Println("Loading books in Notion...")
 	// cross-check with Notion to see if a review already exists
@@ -36,14 +35,14 @@ func main() {
 		_, exist := notionClient.BookExists(context.Background(), bookReview.Title, databaseID)
 		if exist {
 			// nothing
-			} else {
-				// insert
-				var favorites float64
-				favorites = float64(bookReview.Favorites)
-				err := notionClient.InsertReview(context.Background(), databaseID, bookReview.Title, &bookReview.AverageRating, &favorites)
-				if err != nil {
-					log.Fatal(err)
-				}
+		} else {
+			// insert
+			var favorites float64
+			favorites = float64(bookReview.Favorites)
+			err := notionClient.InsertReview(context.Background(), databaseID, bookReview.Title, &bookReview.AverageRating, &favorites)
+			if err != nil {
+				log.Fatal(err)
 			}
 		}
 	}
+}

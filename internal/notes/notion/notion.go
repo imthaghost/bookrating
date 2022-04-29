@@ -17,7 +17,6 @@ func (s *Service) Setup() {
 	// currently none lol
 }
 
-
 // New creates a new notes service using the Notion API
 func New(cfg config.Config) notes.Service {
 	client := notion.NewClient(cfg.Notion.IntegrationToken)

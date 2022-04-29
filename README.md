@@ -17,18 +17,35 @@ Bookrating will ingest a given CSV of book reviews and present it to you in a be
 ![Example](/docs/media/example.gif)
 
 ## Table of Contents
-
+- [Prerequisites](#pre)
 - [Getting Started](#getting-started)
+    - [Env](#env)
     - [Docker](#docker)
     - [Manual](#manual)
 - [Todo](#todo)
 
-<a name="getting-started"></a>
+<a name="pre"></a>
+###  Prerequisites
 
+* [Docker](https://docs.docker.com/get-docker/)
+* [Golang](https://go.dev/doc/install)
+* [Notion Account](https://www.notion.so/)
+* [Notion Integration](https://developers.notion.com/docs/getting-started)
+
+
+<a name="getting-started"></a>
 ## 🚀 Getting Started
 
-<a name="docker"></a>
+<a name="env"></a>
+### Environment Vars
+```bash
+# Notion
+NOTION_INTEGRATION_KEY=<your integration key>
+NOTION_DATABASE_ID=<your database id>
+...
+```
 
+<a name="docker"></a>
 ### Docker
 
 ```bash
@@ -53,6 +70,6 @@ go run cmd/bookrating/main.go
 
 ## Improvements
 
-Visit the <b>Notion</b> link [here](https://www.notion.so/0f3cb918168b48ffa5072c6ee39281ee?v=5330c26bd2d747dfac07882347b4a1df) to go over improvements that can be made.
+Visit the <b>Notion</b> link [here](#) to go over improvements that can be made.
 
 
