@@ -1,6 +1,5 @@
 <p align="center">
   <a href="#">
-    <img alt="gopher" src="https://github.com/egonelbre/gophers/raw/master/.thumb/animation/gopher-dance-long-3x.gif"> +
     <img alt="notion" src="/docs/media/notion.png"> 
   </a>
 </p>
