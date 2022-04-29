@@ -9,10 +9,6 @@ Bookrating will ingest a given CSV of book reviews and present it to you in a be
 </p>
 <br>
 <br>
-<p align="center">
-   <a href="#"><img src="https://goreportcard.com/badge/github.com/imthaghost/bookrating"></a>
-</p>
-<br>
 
 ![Example](/docs/media/example.gif)
 
