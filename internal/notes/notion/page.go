@@ -5,6 +5,10 @@ import (
 	"github.com/dstotijn/go-notion"
 )
 
+// Copyright 2022 imthaghost. All rights reserved.
+// Use of this source code is governed by a MIT
+// license that can be found in the LICENSE file.
+
 // BookExists will determine if a reviewed book already exists in a given Notion database
 func (s *Service) BookExists(ctx context.Context, bookTitle string, databaseID string) (string, bool) {
 	// filter by book title
