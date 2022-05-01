@@ -3,10 +3,10 @@ package cmd
 import (
 	"context"
 
-
 	"github.com/imthaghost/bookrating/config"
 	"github.com/imthaghost/bookrating/internal/notes/notion"
 	"github.com/imthaghost/bookrating/internal/reviews"
+
 	"github.com/k0kubun/pp"
 )
 

@@ -16,17 +16,18 @@ Bookrating will ingest a given CSV of book reviews and present it to you in a be
 - [Prerequisites](#pre)
 - [Getting Started](#getting-started)
     - [Env](#env)
-    - [Docker](#docker)
-    - [Manual](#manual)
-- [Todo](#todo)
+        - [Env Example](#env-example)
+    - [Install](#install)
+    - [Usage](#usage)
+- [Improvements](#improvements)
+- [Built With](#built-with)
 
 <a name="pre"></a>
-###  Prerequisites
+## Prerequisites
 
-* [Docker](https://docs.docker.com/get-docker/)
 * [Golang](https://go.dev/doc/install)
 * [Notion Account](https://www.notion.so/)
-* [Notion Integration](https://developers.notion.com/docs/getting-started)
+* [Notion Integration Key](https://developers.notion.com/docs/getting-started)
 
 
 <a name="getting-started"></a>
@@ -51,7 +52,7 @@ $ cp .env.example .env
   ...
 ```
 
-### Example
+#### Env Example
 ```bash
 # Notion
 NOTION_INTEGRATION_KEY=89032ur3uhr238r923y08r
@@ -59,28 +60,40 @@ NOTION_DATABASE_ID=289yrh3ur3h9082r3y908r
 ...
 ```
 
-<a name="docker"></a>
-### Docker
+<a name="install"></a>
+### Install
 
 ```bash
-# docker compose
-docker compose up --build
-```
-
-<a name="manual"></a>
-
-### Go
-
-```bash
-# clone
-git clone https://github.com/imthaghost/bookrating.git
+# go get :)
+go get github.com/imthaghost/bookrating
 # change to project directory using your GOPATH
-cd $GOPATH/src/github.com/imthaghost/bookrating
-# run 
-go run cmd/bookrating/main.go
+cd $GOPATH/src/github.com/imthaghost/goclone/cmd/goclone
+# build and install application
+go install
 ```
 
-<a name="Improvements"></a>
+<a name="examples"></a>
+
+## Examples
+
+```bash
+# bookrating <file path>
+bookrating data/ratings.csv
+```
+
+![Example](/docs/media/example.gif)
+
+## Usage
+
+```
+Usage:
+  bookrating <file path> [flags]
+
+Flags:
+  -h, --help                  help for bookrating
+```
+
+<a name="improvements"></a>
 
 ## Improvements
 
