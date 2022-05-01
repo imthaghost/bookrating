@@ -66,7 +66,7 @@ NOTION_DATABASE_ID=289yrh3ur3h9082r3y908r
 # go get :)
 go get github.com/imthaghost/bookrating
 # change to project directory using your GOPATH
-cd $GOPATH/src/github.com/imthaghost/goclone/cmd/goclone
+cd $GOPATH/src/github.com/imthaghost/bookrating/cmd/bookrating
 # build and install application
 go install
 ```
