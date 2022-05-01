@@ -28,7 +28,7 @@ func CreateBookClubReview(path string) ([]*ReviewedBook, error) {
 	}
 
 	// stores all books and member reviews
-	reviews := make(map[string]map[string]float64)
+	reviews := make(map[string][]int)
 	var bookReview []*ReviewedBook
 
 	// create a histogram of books and append member reviews
@@ -36,7 +36,7 @@ func CreateBookClubReview(path string) ([]*ReviewedBook, error) {
 		// assign each line
 		bookName := strings.TrimSpace(line[0])
 		bookTitle := strings.ToLower(bookName)
-		memberName := line[1]
+		memberName := line[0]
 		memberRating := line[2]
 		rating, _ := strconv.ParseFloat(memberRating, 64)
 

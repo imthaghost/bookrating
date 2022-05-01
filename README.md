@@ -57,7 +57,6 @@ $ cp .env.example .env
 # Notion
 NOTION_INTEGRATION_KEY=89032ur3uhr238r923y08r
 NOTION_DATABASE_ID=289yrh3ur3h9082r3y908r
-...
 ```
 
 <a name="install"></a>
