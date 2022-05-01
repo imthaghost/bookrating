@@ -65,30 +65,3 @@ func (s *Service) InsertReview(ctx context.Context, databaseID string, bookTitle
 
 	return nil
 }
-
-// UpdateReview ...
-func (s *Service) UpdateReview(ctx context.Context, pageID string) error {
-	// update page props
-	params := notion.UpdatePageParams{
-		DatabasePageProperties: notion.DatabasePageProperties{
-			"Book Title": notion.DatabasePageProperty{
-				Title: []notion.RichText{
-					{
-						Type: notion.RichTextTypeText,
-						Text: &notion.Text{
-							Content: "nothing",
-						},
-					},
-				},
-			},
-		},
-	}
-
-	// update
-	_, err := s.Client.UpdatePage(ctx, pageID, params)
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
